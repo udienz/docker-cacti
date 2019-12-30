@@ -31,7 +31,7 @@ RUN  curl -L -o /tmp/cacti-${CACTI_VERSION}.tgz https://github.com/Cacti/cacti/a
     mkdir -p /var/www/html && tar zxvf /tmp/cacti-${CACTI_VERSION}.tgz -C /var/www/html --strip-components=1 && \
     rm -rf /tmp/cacti-${CACTI_VERSION}.tgz && \
     rm /var/www/html/index.html && \
-    chown www-data.www-data /var/www/html/log/ /var/www/html/rra/
+    chown -R www-data.www-data /var/www/html/log/ /var/www/html/rra/ /var/www/html/resource/ /var/www/html/scripts/ /var/www/html/cache/
 
 STOPSIGNAL SIGWINCH
 
