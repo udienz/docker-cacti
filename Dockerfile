@@ -25,7 +25,7 @@ RUN apt update && \
     apt dist-upgrade -y -q && \
     apt-get install -y -q apache2 libapache2-mod-php \
     perl php-cli php-gmp php-json php-ldap php-mbstring php-mysql php-phpseclib \
-    php-snmp php-twig php-xml rrdtool snmp ucf mariadb-client curl
+    php-snmp php-twig php-xml rrdtool snmp ucf mariadb-client curl php-gd
 
 RUN  curl -L -o /tmp/cacti-${CACTI_VERSION}.tgz https://github.com/Cacti/cacti/archive/release/1.1.12.tar.gz && \
     mkdir -p /var/www/html && tar zxvf /tmp/cacti-${CACTI_VERSION}.tgz -C /var/www/html --strip-components=1 && \
