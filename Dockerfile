@@ -29,7 +29,9 @@ RUN apt update && \
 
 RUN  curl -L -o /tmp/cacti-${CACTI_VERSION}.tgz https://github.com/Cacti/cacti/archive/release/1.1.12.tar.gz && \
     mkdir -p /var/www/html && tar zxvf /tmp/cacti-${CACTI_VERSION}.tgz -C /var/www/html --strip-components=1 && \
-    rm -rf /tmp/cacti-${CACTI_VERSION}.tgz
+    rm -rf /tmp/cacti-${CACTI_VERSION}.tgz && \
+    rm /var/www/html/index.html && \
+    chown www-data.www-data /var/www/html/log/ /var/www/html/rra/
 
 STOPSIGNAL SIGWINCH
 
