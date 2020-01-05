@@ -27,7 +27,7 @@ RUN apt update && \
     perl php-cli php-gmp php-json php-ldap php-mbstring php-mysql php-phpseclib \
     php-snmp php-twig php-xml rrdtool snmp ucf mariadb-client curl php-gd
 
-RUN  curl -L -o /tmp/cacti-${CACTI_VERSION}.tgz https://github.com/Cacti/cacti/archive/release/1.1.12.tar.gz && \
+RUN  curl -L -o /tmp/cacti-${CACTI_VERSION}.tgz https://github.com/Cacti/cacti/archive/release/${CACTI_VERSION}.tar.gz && \
     mkdir -p /var/www/html && tar zxvf /tmp/cacti-${CACTI_VERSION}.tgz -C /var/www/html --strip-components=1 && \
     rm -rf /tmp/cacti-${CACTI_VERSION}.tgz && \
     rm /var/www/html/index.html && \
