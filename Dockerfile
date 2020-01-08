@@ -36,6 +36,8 @@ RUN  curl -L -o /tmp/cacti-${CACTI_VERSION}.tgz https://github.com/Cacti/cacti/a
 STOPSIGNAL SIGWINCH
 
 COPY apache2-foreground /usr/local/bin/
+COPY entrypoint.sh /entrypoint.sh
+
 WORKDIR /var/www/html
 
 EXPOSE 80
